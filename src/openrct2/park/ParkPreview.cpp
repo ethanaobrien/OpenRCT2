@@ -131,6 +131,11 @@ namespace OpenRCT2
     // 0x0046DB4C
     static std::optional<PreviewImage> generatePreviewMap()
     {
+
+#ifdef __EMSCRIPTEN__
+       return std::nullopt;
+#endif
+
         const auto& gameState = getGameState();
         const auto drawableMapSize = TileCoordsXY{ gameState.mapSize.x - 2, gameState.mapSize.y - 2 };
         const auto longEdgeSize = std::max(drawableMapSize.x, drawableMapSize.y);
@@ -178,6 +183,10 @@ namespace OpenRCT2
     {
         if (gOpenRCT2NoGraphics)
             return std::nullopt;
+
+#ifdef __EMSCRIPTEN__
+       return std::nullopt;
+#endif
 
         const auto& gameState = getGameState();
         const auto mainWindow = WindowGetMain();
