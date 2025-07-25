@@ -234,6 +234,7 @@ namespace OpenRCT2::Ui::Windows
                         scenarioSelectWnd->UpdateParkPreview(preview);
                     });
             }
+#ifndef __EMSCRIPTEN__
             else
             {
                 SourceDescriptor source{};
@@ -254,6 +255,7 @@ namespace OpenRCT2::Ui::Windows
                     scenarioMetaObj.Unload();
                 }
             }
+#endif // __EMSCRIPTEN__
         }
 
         void UpdateParkPreview(const ParkPreview& preview)
