@@ -133,7 +133,7 @@ namespace OpenRCT2
     {
 
 #ifdef __EMSCRIPTEN__
-       return std::nullopt;
+        return std::nullopt;
 #endif
 
         const auto& gameState = getGameState();
@@ -185,7 +185,7 @@ namespace OpenRCT2
             return std::nullopt;
 
 #ifdef __EMSCRIPTEN__
-       return std::nullopt;
+        return std::nullopt;
 #endif
 
         const auto& gameState = getGameState();
