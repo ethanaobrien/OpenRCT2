@@ -34,7 +34,7 @@ env:
   OPENRCT2_BUILD_SERVER: GitHub
   OPENRCT2_ORG_TOKEN: ${{ secrets.OPENRCT2_ORG_TOKEN }}
   BACKTRACE_IO_TOKEN: ${{ secrets.BACKTRACE_IO_TOKEN }}
-  OPENRCT2_VERSION: 0.4.24
+  OPENRCT2_VERSION: 0.4.25
 
 # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-using-a-fallback-value
 concurrency:
@@ -727,7 +727,6 @@ jobs:
           repository: OpenRCT2/OpenRCT2-binaries
           token: ${{ secrets.OPENRCT2_BINARIES_CI_UPLOAD }}
           files: |
-            openrct2-${{ needs.build_variables.outputs.name }}-sha256sums.txt
             OpenRCT2-${{ needs.build_variables.outputs.name }}-*
           body_path: release_notes.txt
           tag_name: ${{ needs.build_variables.outputs.name }}
